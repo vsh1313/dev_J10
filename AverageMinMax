@@ -1,0 +1,48 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package arrays;
+
+/**
+ *
+ * @author ANDROID
+ */
+public class Main {
+    
+    static float min(float a, float b){
+        return a < b ? a : b;
+    }
+    
+    static float max(float a, float b){
+        return a > b ? a : b;
+    }
+
+    static float max(float[] array){
+        return max(array[0], array);
+    }
+    
+    static float min(float a, float ... array){
+        //float t = array[0];   
+        for (float x : array) a = min(a, x);  //Интегрирование - применение для каждого Икс из множества определенного набора действий
+        return a;
+    }
+    
+    static float min(float[] array){
+        return min(array[0], array);
+    }
+    
+    static float max(float a, float ... array){
+        for (float x : array) a = max(x, a);
+        return a;
+    }
+    
+    public static void main(String[] args){
+       float[] array = {1, 2, 3, 0, 5, 6, 7};
+        
+        float min = min(array);
+        float max = max(array);
+        float avg = (min + max) / 2;
+    }
+}
